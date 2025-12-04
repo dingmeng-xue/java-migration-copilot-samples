@@ -4,12 +4,10 @@ import org.springframework.messaging.Message;
 import org.springframework.stereotype.Component;
 import com.azure.spring.messaging.servicebus.core.ServiceBusTemplate;
 import org.springframework.messaging.support.MessageBuilder;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Component
 public class Producer {
 
-    @Autowired
     private final ServiceBusTemplate serviceBusTemplate;
 
     public Producer(ServiceBusTemplate serviceBusTemplate) {
