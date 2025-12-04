@@ -1,4 +1,4 @@
-package com.example.messagingrabbitmq;
+package com.example.messagingservicebus;
 
 import org.springframework.messaging.Message;
 import org.springframework.stereotype.Component;
@@ -23,9 +23,9 @@ public class Producer {
             Message<String> responseMessage = MessageBuilder.withPayload(responseString)
                     .build();
             if (i % 2 == 0) {
-                serviceBusTemplate.send(MessagingRabbitmqApplication.queueName2, responseMessage);
+                serviceBusTemplate.send(MessagingServicebusApplication.queueName2, responseMessage);
             } else {
-                serviceBusTemplate.send(MessagingRabbitmqApplication.queueName1, responseMessage);
+                serviceBusTemplate.send(MessagingServicebusApplication.queueName1, responseMessage);
             }
         }
     }
