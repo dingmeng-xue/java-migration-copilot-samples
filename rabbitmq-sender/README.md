@@ -1,6 +1,6 @@
-# RabbitMQ Sender
+# Azure Service Bus Sender
 
-This project demonstrates a Java application that sends messages to a RabbitMQ message broker.
+This project demonstrates a Java application that sends messages to an Azure Service Bus message broker.
 
 ## Documentation
 

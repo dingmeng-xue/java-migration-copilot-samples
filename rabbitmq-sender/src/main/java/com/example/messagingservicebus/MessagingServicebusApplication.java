@@ -1,4 +1,4 @@
-package com.example.messagingrabbitmq;
+package com.example.messagingservicebus;
 
 import com.azure.core.credential.TokenCredential;
 import com.azure.core.exception.ResourceNotFoundException;
@@ -12,13 +12,13 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class MessagingRabbitmqApplication {
+public class MessagingServicebusApplication {
 
     static final String queueName1 = "queue1";
     static final String queueName2 = "queue2";
 
     public static void main(String[] args) throws InterruptedException {
-        ConfigurableApplicationContext applicationContext = SpringApplication.run(MessagingRabbitmqApplication.class);
+        ConfigurableApplicationContext applicationContext = SpringApplication.run(MessagingServicebusApplication.class);
         Producer producer = applicationContext.getBean(Producer.class);
         producer.run();
     }

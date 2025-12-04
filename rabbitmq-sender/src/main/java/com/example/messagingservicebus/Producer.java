@@ -1,15 +1,13 @@
-package com.example.messagingrabbitmq;
+package com.example.messagingservicebus;
 
 import org.springframework.messaging.Message;
 import org.springframework.stereotype.Component;
 import com.azure.spring.messaging.servicebus.core.ServiceBusTemplate;
 import org.springframework.messaging.support.MessageBuilder;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Component
 public class Producer {
 
-    @Autowired
     private final ServiceBusTemplate serviceBusTemplate;
 
     public Producer(ServiceBusTemplate serviceBusTemplate) {
@@ -23,9 +21,9 @@ public class Producer {
             Message<String> responseMessage = MessageBuilder.withPayload(responseString)
                     .build();
             if (i % 2 == 0) {
-                serviceBusTemplate.send(MessagingRabbitmqApplication.queueName2, responseMessage);
+                serviceBusTemplate.send(MessagingServicebusApplication.queueName2, responseMessage);
             } else {
-                serviceBusTemplate.send(MessagingRabbitmqApplication.queueName1, responseMessage);
+                serviceBusTemplate.send(MessagingServicebusApplication.queueName1, responseMessage);
             }
         }
     }
