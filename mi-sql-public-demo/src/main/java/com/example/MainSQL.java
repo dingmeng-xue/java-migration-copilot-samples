@@ -31,7 +31,6 @@ public class MainSQL {
         String clientId = properties.getProperty("AZURE_CLIENT_ID");
         
         connString = connString + ";msiClientId=" + clientId + ";authentication=ActiveDirectoryMSI";
-        System.out.print(connString);
         
         SQLServerDataSource ds = new SQLServerDataSource();
         ds.setURL(connString);
